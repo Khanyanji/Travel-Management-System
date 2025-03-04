@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Pickup - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function confirmBooking() {
+            let name = document.getElementById("name").value;
+            let pickupLocation = document.getElementById("pickup-location").value;
+            let dropoffLocation = document.getElementById("dropoff-location").value;
+            let date = document.getElementById("date").value;
+            let time = document.getElementById("time").value;
+            let passengers = document.getElementById("passengers").value;
+
+            if (name && pickupLocation && dropoffLocation && date && time && passengers) {
+                alert(`Thank you, ${name}! Your pickup from ${pickupLocation} to ${dropoffLocation} on ${date} at ${time} for ${passengers} passenger(s) has been booked.`);
+                document.getElementById("booking-form").reset();
+            } else {
+                alert("Please fill in all fields before booking.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Book a Pickup</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Pickup Booking Form</h2>
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required required>
+
+            <label for="pickup-location">Pickup Location:</label>
+            <input type="text" id="pickup-location" name="pickup-location" placeholder="pickup-location"required>
+
+            <label for="dropoff-location">Drop-off Location:</label>
+            <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Drop-off Location"required>
+
+            <label for="date">Pickup Date:</label>
+            <input type="date" id="date" name="date" placeholder="pickup-location"required>
+
+            <label for="time">Pickup Time:</label>
+            <input type="time" id="time" name="time" placeholder="Pickup Time"required>
+
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of Passengers"required>
+
+            <button type="button" onclick="confirmBooking()">Book Pickup</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

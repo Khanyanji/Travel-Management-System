@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Hotel - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function confirmCancellation() {
+            let bookingId = document.getElementById("booking-id").value;
+            if (bookingId.trim() === "") {
+                alert("Please enter your booking ID.");
+                return;
+            }
+            let confirmCancel = confirm("Are you sure you want to cancel this hotel booking?");
+            if (confirmCancel) {
+                alert("Your hotel booking has been successfully canceled.");
+                document.getElementById("cancel-form").reset();
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Cancel Your Hotel Booking</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Hotel Cancellation</h2>
+        <p>Enter your booking details below to cancel your hotel reservation.</p>
+
+        <form id="cancel-form">
+            <label for="booking-id">Booking ID:</label>
+            <input type="text" id="booking-id" name="booking-id" required>
+
+            <label for="email">Email Associated with Booking:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="button" onclick="confirmCancellation()">Cancel Hotel</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved..</p>
+    </footer>
+</body>
+</html>
+

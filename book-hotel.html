@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Hotel - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function confirmBooking() {
+            let name = document.getElementById("name").value;
+            let hotel = document.getElementById("hotel").value;
+            let checkin = document.getElementById("checkin").value;
+            let checkout = document.getElementById("checkout").value;
+            let guests = document.getElementById("guests").value;
+
+            if (name && hotel && checkin && checkout && guests) {
+                alert(`Thank you, ${name}! Your booking at ${hotel} from ${checkin} to ${checkout} for ${guests} guest(s) has been confirmed.`);
+                document.getElementById("booking-form").reset();
+            } else {
+                alert("Please fill in all fields before booking.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Book a Hotel</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Hotel Booking Form</h2>
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="hotel">Hotel Name:</label>
+            <input type="text" id="hotel" name="hotel" placeholder="Hotel Name">
+
+            <label for="checkin">Check-in Date:</label>
+            <input type="date" id="checkin" name="checkin" placeholder="checkin date" required>
+
+            <label for="checkout">Check-out Date:</label>
+            <input type="date" id="checkout" name="checkout" placeholder="checkout date" required>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+
+            <button type="button" onclick="confirmBooking()">Book Hotel</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved..</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Insurance - Salama Travel Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function submitInsurance() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let destination = document.getElementById("destination").value;
+            let duration = document.getElementById("duration").value;
+
+            if (name.trim() === "" || email.trim() === "" || destination.trim() === "" || duration.trim() === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            alert("Your travel insurance request has been submitted. We will contact you soon!");
+            document.getElementById("insurance-form").reset();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Travel Insurance</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Get Travel Insurance</h2>
+        <p>Protect yourself during your travels. Fill out the form below to request travel insurance:</p>
+
+        <form id="insurance-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="duration">Trip Duration (Days):</label>
+            <input type="number" id="duration" name="duration" required>
+
+            <button type="button" onclick="submitInsurance()">Request Insurance</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

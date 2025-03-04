@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function addReview() {
+            let name = document.getElementById("name").value;
+            let rating = document.getElementById("rating").value;
+            let reviewText = document.getElementById("review-text").value;
+            let reviewsContainer = document.getElementById("reviews-container");
+
+            if (name && rating && reviewText) {
+                let newReview = document.createElement("div");
+                newReview.classList.add("review");
+                newReview.innerHTML = `<strong>${name}</strong> <span>(${rating} stars)</span><p>${reviewText}</p>`;
+                reviewsContainer.prepend(newReview);
+                document.getElementById("review-form").reset();
+                alert("Thank you for your review!");
+            } else {
+                alert("Please fill in all fields before submitting.");
+            }
+        }
+    </script>
+    <style>
+        .reviews {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Customer Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>What Our Customers Say</h2>
+    
+        <div id="reviews-container">
+            <div class="review">
+                <strong>Sarah Johnson</strong> <span>(5 stars)</span>
+                <p>Amazing service! Everything was smooth and well-organized.</p>
+            </div>
+            <div class="review">
+                <strong>James Smith</strong> <span>(4 stars)</span>
+                <p>Great experience overall. Could improve response times.</p>
+            </div>
+        </div>
+
+        <h2>Leave a Review</h2>
+        <form id="review-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="enter your name">
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating">
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+
+            <label for="review-text">Your Review:</label>
+            <textarea id="review-text" name="review-text" rows="4" placeholder="type your message here"></textarea>
+
+            <button type="button" onclick="addReview()">Submit Review</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

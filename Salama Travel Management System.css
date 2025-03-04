@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+}
+
+header {
+    background: #0056b3; /* Darker blue */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.menu-button {
+    background: #28a745; /* Green */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+nav {
+    background: #007bff; /* Blue */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #fff; /* White text */
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #0056b3; /* Darker blue */
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Form Styles */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+
+form button {
+    background: #28a745; /* Green */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #218838; /* Darker green */
+}
+
+/* Review Section */
+.reviews {
+    background: #f8f9fa; /* Light gray */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 5px solid #007bff; /* Blue left border */
+}
+.review-image {
+    width: 100%; /* Make it fit nicely */
+    max-height: 300px; /* Keep it reasonable */
+    object-fit: cover; /* Crop nicely */
+    border-radius: 10px; /* Smooth edges */
+    margin-bottom: 20px;
+}

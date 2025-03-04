@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Travel Plan - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function submitRequest() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let preferences = document.getElementById("preferences").value;
+
+            if (name.trim() === "" || email.trim() === "" || preferences.trim() === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            alert("Your custom travel plan request has been submitted. We will contact you soon!");
+            document.getElementById("custom-plan-form").reset();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Custom Travel Plan</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Request a Custom Travel Plan</h2>
+        <p>Let us create the perfect trip tailored to your needs. Fill out the form below:</p>
+
+        <form id="custom-plan-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="preferences">Describe Your Travel Preferences:</label>
+            <textarea id="preferences" name="preferences" rows="4" required></textarea>
+
+            <button type="button" onclick="submitRequest()">Submit Request</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy;2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

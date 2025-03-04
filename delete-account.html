@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function confirmDeletion() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            if (email.trim() === "" || password.trim() === "") {
+                alert("Please enter your email and password.");
+                return;
+            }
+
+            let confirmDelete = confirm("Are you sure you want to permanently delete your account? This action cannot be undone.");
+            if (confirmDelete) {
+                alert("Your account has been successfully deleted.");
+                document.getElementById("delete-form").reset();
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Delete Your Account</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Account Deletion</h2>
+        <p>If you proceed, your account and all associated data will be permanently deleted. This action cannot be undone.</p>
+
+        <form id="delete-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="confirmDeletion()">Delete Account</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Flight - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+    <script>
+        function confirmBooking() {
+            let name = document.getElementById("name").value;
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let date = document.getElementById("date").value;
+            let passengers = document.getElementById("passengers").value;
+
+            if (name && from && to && date && passengers) {
+                alert(`Thank you, ${name}! Your flight from ${from} to ${to} on ${date} for ${passengers} passenger(s) has been booked.`);
+                document.getElementById("booking-form").reset();
+            } else {
+                alert("Please fill in all fields before booking.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Book a Flight</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Flight Booking Form</h2>
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="enter your full name name">
+
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" placeholder="enter the city of Departure" required>
+
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" placeholder="enter destination" required>
+
+            <label for="date">Departure Date:</label>
+            <input type="date" id="date" name="date"  required>
+
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" id="passengers" name="passengers" min="1" required>
+
+            <button type="button" onclick="confirmBooking()">Book Flight</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
