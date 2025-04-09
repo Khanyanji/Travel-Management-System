@@ -6,7 +6,7 @@
     <title>Book a Pickup - Salama Travel Management System</title>
     <link rel="stylesheet" href="Salama Travel Management System.css">
     <script>
-        function confirmBooking() {
+        function confirmPickupBooking() {
             let name = document.getElementById("name").value;
             let pickupLocation = document.getElementById("pickup-location").value;
             let dropoffLocation = document.getElementById("dropoff-location").value;
@@ -16,7 +16,7 @@
 
             if (name && pickupLocation && dropoffLocation && date && time && passengers) {
                 alert(`Thank you, ${name}! Your pickup from ${pickupLocation} to ${dropoffLocation} on ${date} at ${time} for ${passengers} passenger(s) has been booked.`);
-                document.getElementById("booking-form").reset();
+                document.getElementById("pickup-form").reset();
             } else {
                 alert("Please fill in all fields before booking.");
             }
@@ -42,26 +42,35 @@
 
     <main>
         <h2>Pickup Booking Form</h2>
-        <form id="booking-form">
+        <form id="pickup-form" action="book-pickup.php" method="post">
+            <input type="hidden" name="type" value="pickup">
+
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required required>
+            <input type="text" id="name" name="name" required>
 
             <label for="pickup-location">Pickup Location:</label>
-            <input type="text" id="pickup-location" name="pickup-location" placeholder="pickup-location"required>
+            <select id="pickup-location" name="pickup-location" required>
+                <option value="" disabled selected>Select pickup location</option>
+                <option value="Jomo Kenyatta International Airport">Jomo Kenyatta International Airport</option>
+                <option value="Wilson Airport">Wilson Airport</option>
+                <option value="Nairobi Central Business District">Nairobi CBD</option>
+                <option value="Mombasa International Airport">Mombasa International Airport</option>
+                <option value="Kisumu International Airport">Kisumu International Airport</option>
+            </select>
 
             <label for="dropoff-location">Drop-off Location:</label>
-            <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Drop-off Location"required>
+            <input type="text" id="dropoff-location" name="dropoff-location" placeholder="Enter drop-off location" required>
 
             <label for="date">Pickup Date:</label>
-            <input type="date" id="date" name="date" placeholder="pickup-location"required>
+            <input type="date" id="date" name="date" required>
 
             <label for="time">Pickup Time:</label>
-            <input type="time" id="time" name="time" placeholder="Pickup Time"required>
+            <input type="time" id="time" name="time" required>
 
             <label for="passengers">Number of Passengers:</label>
-            <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of Passengers"required>
+            <input type="number" id="passengers" name="passengers" min="1" required>
 
-            <button type="button" onclick="confirmBooking()">Book Pickup</button>
+            <button type="button" onclick="confirmPickupBooking()">Book Pickup</button> <!-- Call the function on button click -->
         </form>
     </main>
 
@@ -70,4 +79,3 @@
     </footer>
 </body>
 </html>
-

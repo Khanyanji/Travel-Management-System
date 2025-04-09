@@ -41,23 +41,39 @@
 
     <main>
         <h2>Flight Booking Form</h2>
-        <form id="booking-form">
+        <form id="booking-form" action="book-flight.php" method="post">
+            <input type="hidden" name="type" value="flight">
+
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="enter your full name name">
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
             <label for="from">From:</label>
-            <input type="text" id="from" name="from" placeholder="enter the city of Departure" required>
+            <select id="from" name="from" required>
+                <option value="" disabled selected>Select departure city</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Eldoret">Eldoret</option>
+                <option value="Nakuru">Nakuru</option>
+            </select>
 
             <label for="to">To:</label>
-            <input type="text" id="to" name="to" placeholder="enter destination" required>
+            <select id="to" name="to" required>
+                <option value="" disabled selected>Select destination city</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Mombasa">Mombasa</option>
+                <option value="Kisumu">Kisumu</option>
+                <option value="Eldoret">Eldoret</option>
+                <option value="Nakuru">Nakuru</option>
+            </select>
 
             <label for="date">Departure Date:</label>
-            <input type="date" id="date" name="date"  required>
+            <input type="date" id="date" name="date" required>
 
             <label for="passengers">Number of Passengers:</label>
-            <input type="number" id="passengers" name="passengers" min="1" required>
+            <input type="number" id="passengers" name="passengers" min="1" placeholder="Enter number of passengers" required>
 
-            <button type="button" onclick="confirmBooking()">Book Flight</button>
+            <button type="submit">Book Flight</button>
         </form>
     </main>
 
@@ -66,4 +82,3 @@
     </footer>
 </body>
 </html>
-

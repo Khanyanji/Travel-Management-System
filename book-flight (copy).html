@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Flight - Salama Travel Management System</title>
+    <link rel="stylesheet" href="Salama Travel Management System.css">
+</head>
+<body>
+    <header>
+        <h1>Book a Flight</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="plan.html">Plan Your Trip</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="account.html">My Account</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Flight Booking Form</h2>
+        <form action="book.php" method="post">
+            <input type="hidden" name="type" value="flight">
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" required>
+
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" required>
+
+            <label for="date">Departure Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" id="passengers" name="passengers" min="1" required>
+
+            <button type="submit">Book Flight</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -5,90 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salama Travel Management System</title>
     <link rel="stylesheet" href="Salama Travel Management System.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Hero Section Styles */
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .hero button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            background-color: #218838;
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .banner h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        main {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        /* Button Styles */
+        button {
+            background: #28a745;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #0056b3;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="banner">
             <h1>Travel Management System</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="mission.html">Mission</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="location.html">Location</a></li>
-                <li><a href="plan.html">Plan Your Trip</a></li>
-                <li><a href="book-flight.html">Book a Flight</a></li>
-                <li><a href="book-hotel.html">Book a Hotel</a></li>
-                <li><a href="book-pickup.html">Book a Pickup</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="partnerships.html">Partnerships</a></li>
-                <li><a href="hotels.html">Hotels</a></li>
-                <li><a href="pickups.html">Pickups</a></li>
-                <li><a href="airlines.html">Airlines</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section class="about">
-            <h2>About Us</h2>
-            <p>Welcome to the Travel Management System, your go-to platform for seamless trip planning. Our mission is to simplify travel by providing comprehensive booking services for flights, hotels, and pickups.</p>
-        </section>
-        
-        <section class="mission">
-            <h2>Our Mission</h2>
-            <p>Our goal is to make travel hassle-free and accessible to everyone. We strive to provide reliable, efficient, and cost-effective travel solutions tailored to your needs.</p>
-        </section>
-        
-        <section class="history">
-            <h2>Our History</h2>
-            <p>Founded in 2025, we started with a vision to streamline travel arrangements. Over the years, we have partnered with leading airlines, hotels, and transport services to offer top-quality experiences.</p>
-        </section>
-        
-        <section class="location">
-            <h2>Our Location</h2>
-            <p>Headquartered in Nairobi, we operate globally, ensuring that wherever you go, we have you covered.</p>
-        </section>
-        
-        <section class="plan-trip">
-            <h2>Plan Your Trip</h2>
-            <p>We make it easy for you to plan your perfect trip. Choose from our range of services:</p>
-            <ul>
-                <li><a href="book-flight.html">Book a Flight</a> - Find the best deals on flights to your destination.</li>
-                <li><a href="book-hotel.html">Book a Hotel</a> - Stay in top-rated hotels worldwide.</li>
-                <li><a href="book-pickup.html">Book a Pickup</a> - Arrange airport pickups and transportation with ease.</li>
-            </ul>
-        </section>
+    <div class="hero">
+        <h1>Plan Your Dream Trip</h1>
+        <p>With our travel management system, you can easily plan and book your trip.</p>
+        <button>Get Started</button>
+    </div>
 
-        <section class="plan-details">
-            <h2>Book a Flight</h2>
-            <p>Explore flights from trusted airlines and find the best deals for your next journey.</p>
-            <a href="book-flight.html">Proceed to Booking</a>
-        </section>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="plan.html">Plan Your Trip</a></li>
+            <li><a href="book-flight.html">Book a Flight</a></li>
+            <li><a href="book-hotel.html">Book a Hotel</a></li>
+            <li><a href="book-pickup.html">Book a Pickup</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="admin-login.html">Admin Panel</a></li> <!-- Admin Panel Link -->
+        </ul>
+    </div>
 
-        <section class="plan-details">
-            <h2>Book a Hotel</h2>
-            <p>Choose from a selection of top-rated hotels to make your stay comfortable and enjoyable.</p>
-            <a href="book-hotel.html">Proceed to Booking</a>
-        </section>
-
-        <section class="plan-details">
-            <h2>Book a Pickup</h2>
-            <p>Arrange transportation services to get you to your destination stress-free.</p>
-            <a href="book-pickup.html">Proceed to Booking</a>
-        </section>
-    </main>
+    <div class="main-content">
+        <main>
+            <section class="about">
+                <h2>About Us</h2>
+                <p>Welcome to the Travel Management System, your go-to platform for seamless trip planning. Our mission is to simplify travel by providing comprehensive booking services for flights, hotels, and pickups.</p>
+            </section>
+            
+            <section class="mission">
+                <h2>Our Mission</h2>
+                <p>Our goal is to make travel hassle-free and accessible to everyone. We strive to provide reliable, efficient, and cost-effective travel solutions tailored to your needs.</p>
+            </section>
+            
+            <section class="history">
+                <h2>Our History</h2>
+                <p>Founded in 2025, we started with a vision to streamline travel arrangements. Over the years, we have partnered with leading airlines, hotels, and transport services to offer top-quality experiences.</p>
+            </section>
+            
+            <section class="location">
+                <h2>Our Location</h2>
+                <p>Headquartered in Nairobi, we operate globally, ensuring that wherever you go, we have you covered.</p>
+            </section>
+            
+            <section class="plan-trip">
+                <h2>Plan Your Trip</h2>
+                <p>We make it easy for you to plan your perfect trip. Choose from our range of services:</p>
+                <ul>
+                    <li><a href="book-flight.html">Book a Flight</a> - Find the best deals on flights to your destination.</li>
+                    <li><a href="book-hotel.html">Book a Hotel</a> - Stay in top-rated hotels worldwide.</li>
+                    <li><a href="book-pickup.html">Book a Pickup</a> - Arrange airport pickups and transportation with ease.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
     </footer>
-    
-    <script src="js/script.js"></script>
 </body>
 </html>
-

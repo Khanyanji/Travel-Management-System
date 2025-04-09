@@ -35,11 +35,40 @@
         </section>
 
         <section>
-            <h3>My Bookings</h3>
+            <h3>Flight Booking History</h3>
             <ul>
-                <li>Flight: Nairobi to Maasai Mara - <a href="#">View Details</a></li>
-                <li>Hotel: Maasai Mara Lodges - <a href="#">View Details</a></li>
-                <li>Pickup: Airport to Hotel - <a href="#">View Details</a></li>
+                <?php
+                // Fetch flight booking history from the database
+                $sql = "SELECT * FROM User_Flight_History WHERE user_id = 1"; // Replace 1 with the logged-in user's ID
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<li>Flight: {$row['departure_city']} to {$row['destination_city']} on {$row['departure_time']} - Status: {$row['status']}</li>";
+                    }
+                } else {
+                    echo "<li>No flight bookings found.</li>";
+                }
+                ?>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Upcoming Flights</h3>
+            <ul>
+                <?php
+                // Fetch upcoming flights from the database
+                $sql = "SELECT * FROM User_Upcoming_Flights WHERE user_id = 1"; // Replace 1 with the logged-in user's ID
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<li>Flight: {$row['departure_city']} to {$row['destination_city']} on {$row['departure_time']} - Status: {$row['status']}</li>";
+                    }
+                } else {
+                    echo "<li>No upcoming flights found.</li>";
+                }
+                ?>
             </ul>
         </section>
 
@@ -55,4 +84,3 @@
     </footer>
 </body>
 </html>
-

@@ -5,32 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews - Salama Travel Management System</title>
     <link rel="stylesheet" href="Salama Travel Management System.css">
-    <script>
-        function addReview() {
-            let name = document.getElementById("name").value;
-            let rating = document.getElementById("rating").value;
-            let reviewText = document.getElementById("review-text").value;
-            let reviewsContainer = document.getElementById("reviews-container");
-
-            if (name && rating && reviewText) {
-                let newReview = document.createElement("div");
-                newReview.classList.add("review");
-                newReview.innerHTML = `<strong>${name}</strong> <span>(${rating} stars)</span><p>${reviewText}</p>`;
-                reviewsContainer.prepend(newReview);
-                document.getElementById("review-form").reset();
-                alert("Thank you for your review!");
-            } else {
-                alert("Please fill in all fields before submitting.");
-            }
-        }
-    </script>
     <style>
-        .reviews {
-            border: 1px solid #ddd;
+        /* Additional styles for responsiveness */
+        .review-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .review p {
+            margin: 0;
+            color: #555;
+        }
+
+        .review-form {
+            margin-top: 30px;
+        }
+
+        .review-form textarea {
+            width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        .review-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .review-form button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .review-container {
+                padding: 10px;
+            }
+
+            .review {
+                padding: 10px;
+            }
+
+            .review-form textarea {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -52,43 +94,107 @@
     </header>
 
     <main>
-        <h2>What Our Customers Say</h2>
-    
-        <div id="reviews-container">
-            <div class="review">
-                <strong>Sarah Johnson</strong> <span>(5 stars)</span>
-                <p>Amazing service! Everything was smooth and well-organized.</p>
+        <div class="review-container">
+            <h2>What Our Customers Say</h2>
+
+            <!-- Dynamic Reviews Section -->
+            <div id="reviews-list">
+                <!-- Reviews will be dynamically inserted here by JavaScript -->
             </div>
-            <div class="review">
-                <strong>James Smith</strong> <span>(4 stars)</span>
-                <p>Great experience overall. Could improve response times.</p>
+
+            <!-- Review Form -->
+            <div class="review-form">
+                <h3>Leave a Review</h3>
+                <form id="review-form">
+                    <textarea name="review" rows="5" placeholder="Write your review here..." required></textarea>
+                    <button type="submit">Submit Review</button>
+                </form>
             </div>
         </div>
-
-        <h2>Leave a Review</h2>
-        <form id="review-form">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" placeholder="enter your name">
-
-            <label for="rating">Rating:</label>
-            <select id="rating" name="rating">
-                <option value="5">5 - Excellent</option>
-                <option value="4">4 - Very Good</option>
-                <option value="3">3 - Good</option>
-                <option value="2">2 - Fair</option>
-                <option value="1">1 - Poor</option>
-            </select>
-
-            <label for="review-text">Your Review:</label>
-            <textarea id="review-text" name="review-text" rows="4" placeholder="type your message here"></textarea>
-
-            <button type="button" onclick="addReview()">Submit Review</button>
-        </form>
     </main>
 
     <footer>
         <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Array to store reviews
+        const reviews = [
+            {
+                name: "John Doe",
+                comment: "Great flight experience!",
+                date: "2024-01-16"
+            },
+            {
+                name: "Jane Smith",
+                comment: "Comfortable and on time.",
+                date: "2024-02-21"
+            },
+            {
+                name: "Michael Brown",
+                comment: "Excellent service!",
+                date: "2024-03-26"
+            }
+        ];
+
+        // Function to display reviews
+        function displayReviews() {
+            const reviewsList = document.getElementById("reviews-list");
+            reviewsList.innerHTML = ""; // Clear existing reviews
+
+            reviews.forEach(review => {
+                const reviewDiv = document.createElement("div");
+                reviewDiv.classList.add("review");
+
+                const reviewHeader = document.createElement("h3");
+                reviewHeader.textContent = review.name;
+
+                const reviewComment = document.createElement("p");
+                reviewComment.textContent = review.comment;
+
+                const reviewDate = document.createElement("small");
+                reviewDate.textContent = `Reviewed on: ${review.date}`;
+
+                reviewDiv.appendChild(reviewHeader);
+                reviewDiv.appendChild(reviewComment);
+                reviewDiv.appendChild(reviewDate);
+
+                reviewsList.appendChild(reviewDiv);
+            });
+        }
+
+        // Function to handle form submission
+        function handleReviewSubmit(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const reviewText = document.querySelector("textarea[name='review']").value;
+
+            if (reviewText.trim() === "") {
+                alert("Please write a review before submitting.");
+                return;
+            }
+
+            // Add the new review to the array
+            const newReview = {
+                name: "Guest", // You can replace this with a logged-in user's name
+                comment: reviewText,
+                date: new Date().toISOString().split("T")[0] // Current date in YYYY-MM-DD format
+            };
+
+            reviews.unshift(newReview); // Add the new review to the beginning of the array
+
+            // Clear the form
+            document.getElementById("review-form").reset();
+
+            // Refresh the reviews list
+            displayReviews();
+        }
+
+        // Attach event listener to the form
+        document.getElementById("review-form").addEventListener("submit", handleReviewSubmit);
+
+        // Display initial reviews when the page loads
+        displayReviews();
+    </script>
 </body>
 </html>
-

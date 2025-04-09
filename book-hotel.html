@@ -6,7 +6,7 @@
     <title>Book a Hotel - Salama Travel Management System</title>
     <link rel="stylesheet" href="Salama Travel Management System.css">
     <script>
-        function confirmBooking() {
+        function confirmHotelBooking() {
             let name = document.getElementById("name").value;
             let hotel = document.getElementById("hotel").value;
             let checkin = document.getElementById("checkin").value;
@@ -41,29 +41,37 @@
 
     <main>
         <h2>Hotel Booking Form</h2>
-        <form id="booking-form">
+        <form id="booking-form" action="book.php" method="post">
+            <input type="hidden" name="type" value="hotel">
+
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <input type="text" id="name" name="name" required>
 
             <label for="hotel">Hotel Name:</label>
-            <input type="text" id="hotel" name="hotel" placeholder="Hotel Name">
+            <select id="hotel" name="hotel" required>
+                <option value="" disabled selected>Select a hotel</option>
+                <option value="Sarova Resorts">Sarova Resorts</option>
+                <option value="Hilton Hotels">Hilton Hotels</option>
+                <option value="Masai Mara Lodges">Masai Mara Lodges</option>
+                <option value="Kempinski Hotel">Kempinski Hotel</option>
+                <option value="Radisson Blu">Radisson Blu</option>
+            </select>
 
             <label for="checkin">Check-in Date:</label>
-            <input type="date" id="checkin" name="checkin" placeholder="checkin date" required>
+            <input type="date" id="checkin" name="checkin" required>
 
             <label for="checkout">Check-out Date:</label>
-            <input type="date" id="checkout" name="checkout" placeholder="checkout date" required>
+            <input type="date" id="checkout" name="checkout" required>
 
             <label for="guests">Number of Guests:</label>
             <input type="number" id="guests" name="guests" min="1" required>
 
-            <button type="button" onclick="confirmBooking()">Book Hotel</button>
+            <button type="button" onclick="confirmHotelBooking()">Book Hotel</button> <!-- Call the function on button click -->
         </form>
     </main>
 
     <footer>
-        <p>&copy; 2025 Salama Travel Management System. All rights reserved..</p>
+        <p>&copy; 2025 Salama Travel Management System. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
